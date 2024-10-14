@@ -1,0 +1,181 @@
+.css-blogs-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+  }
+  
+  .blog-header {
+    background-color: #6200ea;
+    color: white;
+    padding: 3rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .header-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+  
+  .header-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+  
+  .animated-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .course-button {
+    background-color: white;
+    color: #6200ea;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .course-button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .filter-nav {
+    background-color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  .filter-nav button, .filter-nav select {
+    background-color: transparent;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .filter-nav button:hover, .filter-nav select:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .filter-nav button.active {
+    background-color: #6200ea;
+    color: white;
+  }
+  
+  .blog-list {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .blog-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  }
+  
+  .blog-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .blog-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+  }
+  
+  .blog-content h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: #333;
+  }
+  
+  .blog-content p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .blog-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .tag {
+    background-color: #e0e0e0;
+    color: #333;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  
+  .blog-points {
+    background-color: #6200ea;
+    color: white;
+    padding: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .points-label {
+    font-size: 0.8rem;
+    margin-left: 0.3rem;
+    opacity: 0.9;
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+  
+    .course-button {
+      margin-top: 1rem;
+    }
+  
+    .filter-nav {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .blog-list {
+      grid-template-columns: 1fr;
+    }
+  }
