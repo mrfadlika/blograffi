@@ -57,10 +57,101 @@ const BlogKeduaPart4 = () => {
             <h6>Raffi Fadlika, Oct 26, 2024</h6>
             <p style={{ marginTop: "5px" }}>
               Halo teman teman, pada seri blog kali ini kita akan membahas
-              tentang membuat API resource di Laravel 11. API Resources ini akan
-              digunakan untuk mengubah data dari <i>Model</i> menjadi format
-              JSON dengan cepat dan mudah
+              tentang menampilkan list data posts dari database didalam Laravel
+              11 dengan format JSON
             </p>
+            <h4>Membuat Controller Post</h4>
+            <p>
+              Sekarang, silahkan teman teman jalankan perintah berikut pada
+              terminal dan pastikan sudah berada didalam directory project
+              laravelnya
+            </p>
+            <CodeEditor
+              fileName={"bash"}
+              code={"php artisan make:controller Api/PostController"}
+            />
+            <p>
+              Jika perintah diatas berhasil, maka kita akan mendapatkan file
+              baru yang berada pada folder{" "}
+              <code>app/Http/Controllers/Api/PostController.php</code>. Silahkan
+              buka file tersebut, kemudian ubah semua codenya menjadi seperti
+              berikut ini
+            </p>
+            <CodeEditor
+              fileName={"app/Http/Controllers/Api/PostController.php"}
+              code={`<?php
+
+namespace App\\Http\\Controllers\\Api;
+
+//import model Post
+use App\\Models\\Post;
+
+use App\\Http\\Controllers\\Controller;
+
+//import resource PostResource
+use App\\Http\\Resources\\PostResource;
+
+class PostController extends Controller
+{    
+    /**
+     * index
+     *
+     * @return void
+     */
+    public function index()
+    {
+        //get semua posts
+        $posts = Post::latest()->paginate(5);
+
+        //return collection of posts as a resource
+        return new PostResource(true, 'List Data Posts', $posts);
+    }
+}`}
+            />
+            <p>
+              Dari perubahan diatas, pertama kita import Model <code>Post</code>{" "}
+              terlebih dahulu
+            </p>
+            <CodeEditor code={`use App\\Models\\Post;`} />
+            <p>
+              Setelah itu, kita import juga API Resource yang sudah kita buat
+              sebelumnya, yaitu <code>PostResource</code>
+            </p>
+            <CodeEditor code={`use App\\Http\\Resources\\PostResource;`} />
+            <p>
+              Didalam class <code>PostController</code> kita dapat menambahkan
+              method baru dengan nama index
+            </p>
+            <CodeEditor
+              code={`public function index(){
+    //...
+}`}
+            />
+            <p>
+              Di dalam method tersebut, kita melakukan get data dari database
+              melalui Model <code>Post</code>
+            </p>
+            <CodeEditor code={`$posts = Post::latest()->paginate(5);`} />
+            <p>
+              Setelah itu kita parsing variabel <code>$posts</code> ke dalam{" "}
+              <code>PostResource</code>
+            </p>
+            <CodeEditor
+              code={`return new PostResource(true, 'List Data Project', $posts);`}
+            />
+            <h4>Membuat Route Rest API</h4>
+            <p>
+              Sejak Laravel 11 rilis, route <code>api</code> sudah tidak
+              tersedia secara default saat proses instalasi. Tapi jangan
+              khawatir, karena kita tinggal mempublishnya. Silahkan teman teman
+              jalankan perintah di terminal dan pastikan sudah berada di dalam
+              project laravelnya
+            </p>
+            <CodeEditor code={`php artisan install:api`} />
+            Jika perintah diatas dijalankan, maka akan secara otomatis mengunduh
+            library yang bernama <code>sanctum</code>, tapi tidak akan
+            menggunakan library itu saat ini. Dan sekarang route untuk Rest API
+            sudah tersedia didalam folder <code>routes/api.php</code>
           </div>
         </div>
         <div className="blog-page rightcolumn">
