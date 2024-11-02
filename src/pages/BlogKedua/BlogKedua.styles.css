@@ -1,0 +1,247 @@
+.blog-page * {
+    box-sizing: border-box;
+  }
+  
+  .blog-page body {
+    font-family: Inter;
+    padding: 20px;
+    background: #f1f1f1;
+  }
+  
+  .blog-page .header {
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    background: white;
+  }
+  
+  .blog-page .leftcolumn {
+    float: left;
+    width: 75%;
+  }
+  
+  .container-pengingat {
+    background-color: #e6fc69;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  .blog-page .rightcolumn {
+    position: relative;
+    top: 0;
+    float: right;
+    width: 25%;
+    padding-left: 20px;
+  }
+  
+  .bordered-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .bordered-table th, .bordered-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .bordered-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .sticky-container {
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    padding-right: 5px; /* Kurangi padding */
+  }
+  
+  .series-list {
+    max-height: none; /* Hilangkan batasan tinggi */
+    overflow-y: visible; /* Hilangkan scroll internal */
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+  }
+  
+  .series-items {
+    padding-right: 5px;
+    padding-bottom: 20px;
+  }
+  
+  .blog-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px; /* Tambahkan sudut bulat */
+  }
+  
+  .blog-item:last-child {
+    margin-bottom: 0; /* Hilangkan margin bawah pada item terakhir */
+  }
+  
+  .blog-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .blog-page .selected {
+    background-color: #0275d8;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  /* Sembunyikan scrollbar namun tetap bisa di-scroll */
+  .sticky-container::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+  
+  .sticky-container {
+    scrollbar-width: none; /* Untuk Firefox */
+    -ms-overflow-style: none; /* Untuk Internet Explorer dan Edge */
+  }
+  
+  .blog-page .sebelah-kanan {
+    text-align: right;
+    padding-left: 300px;
+    width: 50%;
+    flex: 1;
+  }
+  
+  .blog-page .sebelah-kanan p {
+    margin-bottom: 20px;
+    text-align: right;
+  }
+  
+  .blog-page .unselected {
+    background-color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .blog-page .selected {
+    background-color: #0275d8;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .blog-page .fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .blog-page .card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .blog-page .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .jawaban-dihover {
+    transition: 0.3s;
+  }
+  .jawaban-dihover:hover {
+    background-color: #4a4a4a !important;
+  }
+  
+  .blog-page .footer {
+    padding: 40px;
+    background: #ddd;
+    margin-top: 20px;
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .blog-page .tulisan {
+    margin: 20px 0px 0px 0px;
+    text-align: center;
+  }
+  
+  .blog-page .tulisan h2 {
+    margin: 0;
+    text-align: center;
+  }
+  .blog-page .tulisan p {
+    margin: 0;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .blog-page .leftcolumn,
+    .blog-page .rightcolumn {
+      width: 100%;
+      padding: 0;
+    }
+    .blog-page .footer {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+    }
+    .blog-page .tulisan {
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+    .blog-page .tulisan h2 {
+      margin: 0;
+      text-align: center;
+    }
+    .blog-page .tulisan p {
+      margin: 0;
+      text-align: center;
+    }
+    .blog-page .sebelah-kanan {
+      text-align: center;
+      padding-left: 0;
+      width: 100%;
+    }
+    .blog-page .sebelah-kanan p {
+      text-align: center;
+    }
+  }
+  
+  ul.breadcrumb li {
+    display: inline;
+    font-size: 14px;
+  }
+  
+  ul.breadcrumb li + li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+  }
+  
+  ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+  }
+  
+  ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+  }
+  /* p {
+    text-align: justify;
+    text-justify: inter-word;
+    margin-top: 20px;
+  } */
+  
+  

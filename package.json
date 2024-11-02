@@ -16,7 +16,8 @@
     "lucide-react": "^0.451.0",
     "node-fetch": "^3.3.2",
     "preact": "^10.19.3",
-    "preact-router": "^4.1.2"
+    "preact-router": "^4.1.2",
+    "typed.js": "^2.1.0"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.7.0",

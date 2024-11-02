@@ -1,0 +1,129 @@
+.tech-slider-wrapper {
+    background-color: whitesmoke;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding: 20px 0;
+  }
+  
+  .tech-slider-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .marquee {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .marquee-content {
+    display: flex;
+    animation: marquee 40s linear infinite;
+  }
+  
+  .tech-item {
+    flex: 0 0 200px;
+    margin-right: 20px;
+  }
+  
+  .card-category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 15px;
+    height: 120px;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+  }
+  
+  .card-category:hover {
+    transform: translateY(-5px);
+  }
+  
+  .tech-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
+  
+  .tech-info {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .tech-info h3 {
+    margin: 0 0 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .tech-info p {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .marquee:hover .marquee-content {
+    animation-play-state: paused;
+  }
+  
+  @media (max-width: 768px) {
+    .tech-item {
+      flex: 0 0 180px;
+    }
+    .card-category {
+      height: 110px;
+      padding: 10px;
+    }
+    .tech-logo {
+      width: 35px;
+      height: 35px;
+    }
+    .tech-info h3 {
+      font-size: 13px;
+    }
+    .tech-info p {
+      font-size: 11px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .tech-item {
+      flex: 0 0 160px;
+    }
+    .card-category {
+      height: 100px;
+      padding: 8px;
+    }
+    .tech-logo {
+      width: 30px;
+      height: 30px;
+    }
+    .tech-info h3 {
+      font-size: 12px;
+    }
+    .tech-info p {
+      font-size: 10px;
+    }
+  }

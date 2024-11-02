@@ -1,116 +1,119 @@
 import { h } from "preact";
-import { useState, useEffect } from "preact/hooks";
+import { useState, useEffect, useRef } from "preact/hooks";
 import "./CSSBlogs.css";
+import Typed from "typed.js";
+import TechSlider from "../../Context/TechSlider/TechSlider";
 
 const Home = () => {
   const [blogs, setBlogs] = useState([]);
-  const [titleText, setTitleText] = useState("Raffi Fadlika Blog");
-  const [activeFilter, setActiveFilter] = useState("Semua");
+  const typedRef = useRef(null);
 
   useEffect(() => {
-    // Fetch blogs data here
     setBlogs([
       {
         id: 1,
         title: "Memahami OOP dalam Java",
-        description: "Panduan lengkap tentang OOP dalam Java.",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSio4iHwto_mXFE3q2caH74o0QsKgsN79ehsw&s",
-        path: "/OOPJava/1",
-        tags: ["Java", "OOP"],
-        points: 120,
+        description: "Panduan lengkap tentang OOP dalam Pemrograman Java",
+        image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSio4iHwto_mXFE3q2caH74o0QsKgsN79ehsw&s",
+        author: "Raffi Fadlika",
+        date: "9 Okt 2024",
+        link: "/OOPJava/1",
+      },
+      {
+        id: 2,
+        title: "Tutorial Restfull API Laravel 11",
+        description: "Panduan lengkap tentang Laravel API menggunakan Laravel 11",
+        image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSvD-_e6KULLAtEtg16vKPZJmATkdXiZi09Q&s",
+        author: "Raffi Fadlika",
+        date: "20 Okt 2024",
+        link: "/laravel-api/1",
       },
     ]);
 
-    // Animasi judul
-    const titles = ["Raffi Fadlika Blog", "Blog Teknologi"];
-    let currentIndex = 0;
-
-    const animateTitle = () => {
-      setTitleText("");
-      let i = 0;
-      const typing = setInterval(() => {
-        if (i < titles[currentIndex].length) {
-          setTitleText((prev) => prev + titles[currentIndex][i]);
-          i++;
-        } else {
-          clearInterval(typing);
-          setTimeout(() => {
-            currentIndex = (currentIndex + 1) % titles.length;
-            animateTitle();
-          }, 2000);
-        }
-      }, 100);
+    const options = {
+      strings: ["Raffi Fadlika Blog", "Blog Teknologi"],
+      typeSpeed: 50,
+      backSpeed: 50,
+      loop: true,
+      showCursor: false,
+      cursorChar: "|",
     };
 
-    animateTitle();
+    typedRef.current = new Typed(".animated-title", options);
+
+    return () => {
+      if (typedRef.current) {
+        typedRef.current.destroy();
+      }
+    };
   }, []);
 
   const handleFilterClick = (filter) => {
     setActiveFilter(filter);
-    // Di sini Anda bisa menambahkan logika untuk memfilter blog jika diperlukan
   };
 
   return (
-    <div className="css-blogs-container">
+    <div className="blog-container">
       <header className="blog-header">
         <div className="header-content">
-          <h1 className="animated-title">{titleText}</h1>
-          <p>Temukan artikel terbaru seputar dunia teknologi</p>
+          <h1 className="animated-title">
+            <span className="animated-title-wrapper">
+              <span className="animated-title-text"></span>
+            </span>
+          </h1>
+          <p>The latest industry news, technologies, and resources.</p>
         </div>
       </header>
 
-      <nav className="filter-nav">
-        <button
-          className={activeFilter === "Semua" ? "active" : ""}
-          onClick={() => handleFilterClick("Semua")}
-        >
-          Semua
-        </button>
-        <button
-          className={activeFilter === "Terbaru" ? "active" : ""}
-          onClick={() => handleFilterClick("Terbaru")}
-        >
-          Terbaru
-        </button>
-        <button
-          className={activeFilter === "Populer" ? "active" : ""}
-          onClick={() => handleFilterClick("Populer")}
-        >
-          Populer
-        </button>
-        <select>
-          <option>Pilih Kategori</option>
-          <option>Web Development</option>
-          <option>Mobile Development</option>
-          <option>Data Science</option>
-        </select>
-      </nav>
+      <main>
+        {/* <section className="featured-post">
+          <img
+            src="https://i.pinimg.com/736x/4f/fb/a9/4ffba95a203b2f27b17eaeb926d4b231.jpg"
+            alt="Featured post"
+          />
+          <div className="featured-content">
+            <span className="featured-label">Featured</span>
+            <h2>
+              Breaking Into Product Design: Advice from Untitled Founder,
+              Frankie
+            </h2>
+            <p>
+              Let's get one thing out of the way: you don't need a fancy
+              Bachelor's Degree to get into Product Design. We sat down with
+              Frankie Sullivan to talk about breaking into product design and
+              how anyone can get into this growing industry.
+            </p>
+            <a href="#" className="read-more">
+              →
+            </a>
+          </div>
+        </section> */}
+        <TechSlider />
 
-      <div className="blog-list">
-        {blogs.map((blog) => (
-          <a href={blog.path} style={{textDecoration: "none"}}>
-          <article key={blog.id} className="blog-card">
-            <img src={blog.image} alt={blog.title} className="blog-image" />
-            <div className="blog-content">
-              <h2>{blog.title}</h2>
-              <p>{blog.description}</p>
-              <div className="blog-tags">
-                {blog.tags.map((tag) => (
-                  <span key={tag} className="tag">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="blog-points">
-              <a href={blog.path} style={{textDecoration: "none", color: "white"}}>
-                Baca Selengkapnya
+        <section className="recent-posts">
+          <h2 className="mt-5">Recent blog posts</h2>
+          <div className="blog-grid">
+            {blogs.map((blog) => (
+              <a href={blog.link} key={blog.id} className="linkhrefnya">
+                <article className="blog-card">
+                  <img src={blog.image} alt={blog.title}/>
+                <div className="blog-content">
+                  <h3>{blog.title}</h3>
+                  <p>{blog.description}</p>
+                  <div className="blog-meta">
+                    <span>{blog.author}</span>
+                    <span>{blog.date}</span>
+                    </div>
+                  </div>
+                </article>
               </a>
-            </div>
-          </article>
-          </a>
-        ))}
-      </div>
+            ))}
+          </div>
+          <button className="load-more">Load more</button>
+        </section>
+      </main>
     </div>
   );
 };
