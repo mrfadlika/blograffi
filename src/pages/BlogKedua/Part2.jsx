@@ -2,45 +2,9 @@ import { h } from "preact";
 import "./BlogKedua.styles.css";
 import CodeEditor from "../../Context/CodeEditor";
 import { useState } from "preact/hooks";
+import { blogSeries, globalPath } from "./data_blogkedua";
 
 const BlogKeduaPart2 = () => {
-  const blogSeries = [
-    {
-      title: "Tutorial Laravel API #1: Install dan Menjalankan Laravel 11",
-      link: "/laravel-api/1",
-    },
-    {
-      title: "Tutorial Laravel API #2: Membuat Model dan Migration",
-      link: "/laravel-api/2",
-    },
-    {
-      title: "Tutorial Laravel API #3: Membuat API Resources",
-      link: "/laravel-api/3",
-    },
-    {
-      title:
-        "Tutorial Laravel API #4: Menampilkan Data dari Database dengan Metode GET",
-      link: "/coming-soon",
-    },
-    {
-      title:
-        "Tutorial Laravel API #5: Insert Data ke Database dengan Metode POST",
-      link: "/coming-soon",
-    },
-    {
-      title: "Tutorial Laravel API #6: Menampilkan Detail Data",
-      link: "/coming-soon",
-    },
-    {
-      title: "Tutorial Laravel API #7: Update Data ke Database",
-      link: "/coming-soon",
-    },
-    {
-      title: "Tutorial Laravel API #8: Hapus Data dari Database",
-      link: "/coming-soon",
-    },
-  ];
-
   const currentPath = window.location.pathname;
   const [answer, setAnswer] = useState(null);
   const [modalMessage, setModalMessage] = useState("");
@@ -374,9 +338,15 @@ class Post extends Model
                   <div
                     key={index}
                     className={`blog-page ${
-                      currentPath === blog.link ? "selected" : "unselected"
+                      currentPath === globalPath + blog.id
+                        ? "selected"
+                        : "unselected"
                     }`}
-                    onClick={() => (window.location.href = blog.link)}
+                    onClick={() =>
+                      blog.status === "ready"
+                        ? (window.location.href = globalPath + blog.id)
+                        : (window.location.href = "/coming-soon")
+                    }
                     style={{ marginTop: "10px", marginBottom: "5px" }}
                   >
                     {blog.title}
