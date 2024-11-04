@@ -15,12 +15,19 @@ const CodeEditor = ({ fileName, code }) => {
       console.error('Failed to copy: ', err);
     });
   };
+
   return (
-    <div className="bg-dark text-light p-3 rounded shadow mb-4">
-      <div className="d-flex justify-content-between align-items-center mb-2">
-        <span className="text-secondary">{fileName}</span>
-        {copied ? <span className="text-success">Copied!</span> : <Clipboard style={{cursor: "pointer"}} onClick={copyToClipboard} size={16}/>}
+    <div className="bg-dark text-light p-3 rounded shadow mb-4 position-relative">
+      <div className="position-absolute" style={{ top: '12px', right: '12px' }}>
+        {copied ? (
+          <span className="text-success">Copied!</span>
+        ) : (
+          <Clipboard style={{cursor: "pointer"}} onClick={copyToClipboard} size={16}/>
+        )}
       </div>
+      {fileName && (
+        <span className="text-secondary d-block mb-2">{fileName}</span>
+      )}
       <pre className="m-0">
         <code>{code}</code>
       </pre>
