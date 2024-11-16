@@ -89,16 +89,16 @@ const BlogPertamaPart2 = () => {
   const blogSeries = [
     {
       title: "Tutorial Coding OOP di Java #1: Apa itu OOP?",
-      link: "/OOPJava/1",
+      link: "/oopjava/1",
     },
     {
       title:
         "Tutorial Coding OOP di Java #2: Mengenal Atribut, Method dan Constructor",
-      link: "/OOPJava/2",
+      link: "/oopjava/2",
     },
     {
       title: "Tutorial Coding OOP di Java #3: Modifier dan Packages",
-      link: "/OOPJava/3",
+      link: "/oopjava/3",
     },
   ];
 
@@ -154,7 +154,7 @@ const BlogPertamaPart2 = () => {
                 <a href="/">Home</a>
               </li>
               <li>
-                <a href="/blog">Blog</a>
+                <a href="/oopjava">Blog</a>
               </li>
               <li>OOP Java Part 2</li>
             </ul>

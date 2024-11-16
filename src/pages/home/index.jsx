@@ -18,7 +18,7 @@ const Home = () => {
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSio4iHwto_mXFE3q2caH74o0QsKgsN79ehsw&s",
         author: "Raffi Fadlika",
         date: "9 Okt 2024",
-        link: "/OOPJava/1",
+        link: "/oopjava",
       },
       {
         id: 2,
@@ -28,7 +28,7 @@ const Home = () => {
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSvD-_e6KULLAtEtg16vKPZJmATkdXiZi09Q&s",
         author: "Raffi Fadlika",
         date: "20 Okt 2024",
-        link: "/laravel-api/1",
+        link: "/laravel-api",
       },
     ]);
 

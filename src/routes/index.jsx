@@ -9,14 +9,16 @@ import ComingSoon from "./ComingSoon/ComingSoon";
 import BlogKeduaPart2 from "../pages/BlogKedua/Part2";
 import BlogKeduaPart3 from "../pages/BlogKedua/Part3";
 import BlogKeduaPart4 from "../pages/BlogKedua/Part4";
+import BlogPertama from "../pages/BlogPertama";
 
 function Routes() {
     return (
         <Router>
             <Home path="/" />
-            <BlogPertamaPart1 path="/OOPJava/1" />
-            <BlogPertamaPart2 path="/OOPJava/2" />
-            <BlogPertamaPart3 path="/OOPJava/3" />
+            <BlogPertama path="/oopjava" />
+            <BlogPertamaPart1 path="/oopjava/1" />
+            <BlogPertamaPart2 path="/oopjava/2" />
+            <BlogPertamaPart3 path="/oopjava/3" />
             <BlogPage path="/test" />
             <BlogKeduaPart1 path="/laravel-api/1" />
             <BlogKeduaPart2 path="/laravel-api/2" />
