@@ -14,10 +14,10 @@ const ListPage = ({
   };
 
   const socialLinks = [
-    { icon: "facebook", url: "#" },
-    { icon: "twitter", url: "#" },
-    { icon: "linkedin", url: "#" },
-    { icon: "github", url: "#" },
+    { icon: "whatsapp", url: "https://wa.me/62882020802944" },
+    { icon: "github", url: "https://github.com/mrfadlika" },
+    { icon: "telegram", url: "https://t.me/mrfadlika" },
+    { icon: "instagram", url: "https://instagram.com/mr.fadlika" },
   ];
 
   return (
