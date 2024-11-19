@@ -10,8 +10,6 @@ import BlogKeduaPart2 from "../pages/BlogKedua/Part2";
 import BlogKeduaPart3 from "../pages/BlogKedua/Part3";
 import BlogKeduaPart4 from "../pages/BlogKedua/Part4";
 import BlogPertama from "../pages/BlogPertama";
-import BlogKedua from "../pages/BlogKedua";
-import BlogKeduaPart5 from "../pages/BlogKedua/Part5";
 
 function Routes() {
     return (
