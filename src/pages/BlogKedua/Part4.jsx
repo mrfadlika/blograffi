@@ -2,7 +2,7 @@ import { h } from "preact";
 import "./BlogKedua.styles.css";
 import CodeEditor from "../../Context/CodeEditor";
 import { useState } from "preact/hooks";
-import { blogSeries, globalPath } from "./data_blogkedua";
+import { blogSeries, globalPath } from "./BlogKedua.hooks";
 
 const BlogKeduaPart4 = () => {
   const currentPath = window.location.pathname;
