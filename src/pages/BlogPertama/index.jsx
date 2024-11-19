@@ -1,4 +1,4 @@
-import ListPage from "../List";
+import ListPage from "../../Context/List";
 
 const tutorData = [
   "Tutorial Coding OOP di Java #1: Apa itu OOP?",
@@ -23,6 +23,7 @@ const BlogPertama = () => {
         conclusion:
           "Dengan seri blog ini diharapkan teman teman dapat mengimplementasikan apa itu object oriented programming pada bahasa Java",
       }}
+      image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSio4iHwto_mXFE3q2caH74o0QsKgsN79ehsw&s"
     />
   );
 };
