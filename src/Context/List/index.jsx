@@ -5,7 +5,6 @@ const ListPage = ({
   title,
   description,
   descriptionContent,
-  image,
 }) => {
   const [activeTab, setActiveTab] = useState("tutorial");
   const currentPath = window.location.pathname;
@@ -15,26 +14,25 @@ const ListPage = ({
   };
 
   const socialLinks = [
-    { icon: "facebook", url: "#" },
-    { icon: "twitter", url: "#" },
-    { icon: "linkedin", url: "#" },
-    { icon: "github", url: "#" },
+    { icon: "whatsapp", url: "https://wa.me/62882020802944" },
+    { icon: "github", url: "https://github.com/mrfadlika" },
+    { icon: "telegram", url: "https://t.me/mrfadlika" },
+    { icon: "instagram", url: "https://instagram.com/mr.fadlika" },
   ];
 
   return (
     <div style={{ backgroundColor: "whitesmoke", minHeight: "100vh" }}>
-      <div className="bg-white py-5 shadow">
+      <div className="bg-white py-5">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-3">
-              <img
-                style={{
-                  width: "200px",
-                  height: "200px",
-                  borderRadius: "10px",
-                }}
-                src={image}
-              />
+              <div
+                className="bg-light rounded p-4 text-center mb-3 mb-md-0"
+                style={{ width: "200px", height: "200px" }}
+              >
+                <i className="bi bi-display fs-1 text-secondary"></i>
+                <h5 className="mt-2">Raffi Fadlika Blog</h5>
+              </div>
             </div>
 
             <div className="col-md-9">
@@ -42,10 +40,10 @@ const ListPage = ({
               <p className="text-secondary mb-4">{description}</p>
 
               <div className="d-flex gap-3">
-                <a className="btn btn-primary" href="#tab-bar">
+                <button className="btn btn-danger">
                   <i className="bi bi-collection me-2"></i>
                   {tutorials.length} TUTORIAL
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -55,7 +53,7 @@ const ListPage = ({
       <div className="container py-5">
         <div className="row g-4">
           <div className="col-md-8">
-            <div className="card shadow border-0" id="tab-bar">
+            <div className="card">
               <div className="card-header bg-white">
                 <ul className="nav nav-tabs card-header-tabs">
                   <li className="nav-item">
@@ -120,7 +118,7 @@ const ListPage = ({
           </div>
 
           <div className="col-md-4">
-            <div className="card shadow border-0">
+            <div className="card">
               <div className="card-header bg-white">
                 <h5 className="mb-0">
                   <i className="bi bi-person-badge me-2"></i>
