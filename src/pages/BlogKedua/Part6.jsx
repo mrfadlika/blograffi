@@ -1,7 +1,7 @@
 import ComingSoon from "../../routes/ComingSoon/ComingSoon"
 
-const BlogKeduaPart5 = () => {
+const BlogKeduaPart6 = () => {
     return <ComingSoon />
 }
 
-export default BlogKeduaPart5;
+export default BlogKeduaPart6;

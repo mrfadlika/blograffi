@@ -2,7 +2,7 @@ import { h } from "preact";
 import "./BlogKedua.styles.css";
 import CodeEditor from "../../Context/CodeEditor";
 import { useState } from "preact/hooks";
-import { blogSeries, globalPath } from "./data_blogkedua";
+import { blogSeries, globalPath } from "./BlogKedua.hooks";
 
 const BlogKeduaPart3 = () => {
   const currentPath = window.location.pathname;
@@ -213,11 +213,7 @@ public $resource;`}
                         ? "selected"
                         : "unselected"
                     }`}
-                    onClick={() =>
-                      (blog.status === "ready"
-                        ? (window.location.href = globalPath + blog.id)
-                        : (window.location.href = '/coming-soon/'))
-                    }
+                    onClick={() =>(window.location.href = `/laravel-api/${blog.id}`)}
                     style={{ marginTop: "10px", marginBottom: "5px" }}
                   >
                     {blog.title}

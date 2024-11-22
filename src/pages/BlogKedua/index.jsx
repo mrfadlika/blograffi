@@ -1,5 +1,5 @@
 import ListPage from "../../Context/List";
-import { blogSeries } from "./data_blogkedua";
+import { blogSeries } from "./BlogKedua.hooks";
 
 const BlogKedua = () => {
   const title = blogSeries.map(blog => blog.title);
