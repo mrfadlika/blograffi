@@ -49,7 +49,7 @@ const BlogKeduaPart4 = () => {
                 <a href="/">Home</a>
               </li>
               <li>
-                <a href="/blog">Blog</a>
+                <a href="/laravel-api">Blog</a>
               </li>
               <li>Laravel API Part 4</li>
             </ul>
@@ -263,8 +263,8 @@ Route::apiResource('/posts', App\Http\Controllers\Api\PostController::class);`}
             <p>
               Selamat teman teman, pada seri kali ini telah berhasil menampilkan
               data dari database menggunakan method GET didalam Laravel 11. Pada
-              seri selanjutnya kita akan membahas cara Insert data dengan
-              metode POST dari database,<strong> Sampai Jumpa. </strong>
+              seri selanjutnya kita akan membahas cara Insert data dengan metode
+              POST dari database,<strong> Sampai Jumpa. </strong>
             </p>
           </div>
         </div>
@@ -292,9 +292,7 @@ Route::apiResource('/posts', App\Http\Controllers\Api\PostController::class);`}
                         : "unselected"
                     }`}
                     onClick={() =>
-                      blog.status === "ready"
-                        ? (window.location.href = globalPath + blog.id)
-                        : (window.location.href = "/coming-soon/")
+                      (window.location.href = globalPath + blog.id)
                     }
                     style={{ marginTop: "10px", marginBottom: "5px" }}
                   >

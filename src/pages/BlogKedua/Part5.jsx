@@ -1,7 +1,8 @@
-import ComingSoon from "../../routes/ComingSoon/ComingSoon"
+import ComingSoon from "../../routes/ComingSoon/ComingSoon";
 
 const BlogKeduaPart5 = () => {
-    <ComingSoon />
-}
+  console.log("rendering coming soon");
+  return <ComingSoon />;
+};
 
 export default BlogKeduaPart5;

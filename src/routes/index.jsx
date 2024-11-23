@@ -10,6 +10,11 @@ import BlogKeduaPart2 from "../pages/BlogKedua/Part2";
 import BlogKeduaPart3 from "../pages/BlogKedua/Part3";
 import BlogKeduaPart4 from "../pages/BlogKedua/Part4";
 import BlogPertama from "../pages/BlogPertama";
+import BlogKedua from "../pages/BlogKedua";
+import BlogKeduaPart5 from "../pages/BlogKedua/Part5";
+import BlogKeduaPart6 from "../pages/BlogKedua/Part6";
+import BlogKeduaPart7 from "../pages/BlogKedua/Part7";
+import BlogKeduaPart8 from "../pages/BlogKedua/Part8";
 
 function Routes() {
     return (
@@ -26,6 +31,9 @@ function Routes() {
             <BlogKeduaPart3 path="/laravel-api/3" />
             <BlogKeduaPart4 path="/laravel-api/4" />
             <BlogKeduaPart5 path="/laravel-api/5" />
+            <BlogKeduaPart6 path="/laravel-api/6" />
+            <BlogKeduaPart7 path="/laravel-api/7" />
+            <BlogKeduaPart8 path="/laravel-api/8" />
             <ComingSoon path="/coming-soon" />
             <ComingSoon path="*" />
         </Router>

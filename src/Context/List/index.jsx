@@ -5,6 +5,7 @@ const ListPage = ({
   title,
   description,
   descriptionContent,
+  image
 }) => {
   const [activeTab, setActiveTab] = useState("tutorial");
   const currentPath = window.location.pathname;
@@ -22,17 +23,11 @@ const ListPage = ({
 
   return (
     <div style={{ backgroundColor: "whitesmoke", minHeight: "100vh" }}>
-      <div className="bg-white py-5">
+      <div className="bg-white py-5 shadow">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-3">
-              <div
-                className="bg-light rounded p-4 text-center mb-3 mb-md-0"
-                style={{ width: "200px", height: "200px" }}
-              >
-                <i className="bi bi-display fs-1 text-secondary"></i>
-                <h5 className="mt-2">Raffi Fadlika Blog</h5>
-              </div>
+                <img src={image} style={{ width: "200px", height: "200px", borderRadius: "10px" }} />
             </div>
 
             <div className="col-md-9">
@@ -40,7 +35,7 @@ const ListPage = ({
               <p className="text-secondary mb-4">{description}</p>
 
               <div className="d-flex gap-3">
-                <button className="btn btn-danger">
+                <button className="btn btn-primary">
                   <i className="bi bi-collection me-2"></i>
                   {tutorials.length} TUTORIAL
                 </button>
@@ -53,7 +48,7 @@ const ListPage = ({
       <div className="container py-5">
         <div className="row g-4">
           <div className="col-md-8">
-            <div className="card">
+            <div className="card shadow border-0">
               <div className="card-header bg-white">
                 <ul className="nav nav-tabs card-header-tabs">
                   <li className="nav-item">
@@ -118,7 +113,7 @@ const ListPage = ({
           </div>
 
           <div className="col-md-4">
-            <div className="card">
+            <div className="card shadow border-0">
               <div className="card-header bg-white">
                 <h5 className="mb-0">
                   <i className="bi bi-person-badge me-2"></i>

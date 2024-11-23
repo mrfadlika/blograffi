@@ -48,7 +48,7 @@ const BlogKeduaPart3 = () => {
                 <a href="/">Home</a>
               </li>
               <li>
-                <a href="/blog">Blog</a>
+                <a href="/laravel-api">Blog</a>
               </li>
               <li>Laravel API Part 3</li>
             </ul>
@@ -214,9 +214,7 @@ public $resource;`}
                         : "unselected"
                     }`}
                     onClick={() =>
-                      (blog.status === "ready"
-                        ? (window.location.href = globalPath + blog.id)
-                        : (window.location.href = '/coming-soon/'))
+                      (window.location.href = globalPath + blog.id)
                     }
                     style={{ marginTop: "10px", marginBottom: "5px" }}
                   >

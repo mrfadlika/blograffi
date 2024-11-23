@@ -1,4 +1,4 @@
-import ListPage from "../List";
+import ListPage from "../../Context/List";
 
 const tutorData = [
   "Tutorial Coding OOP di Java #1: Apa itu OOP?",

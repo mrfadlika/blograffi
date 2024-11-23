@@ -48,7 +48,7 @@ const BlogKeduaPart1 = () => {
                 <a href="/">Home</a>
               </li>
               <li>
-                <a href="/blog">Blog</a>
+                <a href="/laravel-api">Blog</a>
               </li>
               <li>Laravel API Part 1</li>
             </ul>
@@ -207,9 +207,7 @@ DB_PASSWORD=`}
                         : "unselected"
                     }`}
                     onClick={() =>
-                      blog.status === "ready"
-                        ? (window.location.href = `/laravel-api/${blog.id}`)
-                        : (window.location.href = "/coming-soon/")
+                      (window.location.href = globalPath + blog.id)
                     }
                     style={{ marginTop: "10px", marginBottom: "5px" }}
                   >
