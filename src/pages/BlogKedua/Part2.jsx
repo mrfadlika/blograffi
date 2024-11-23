@@ -342,13 +342,7 @@ class Post extends Model
                         ? "selected"
                         : "unselected"
                     }`}
-<<<<<<< HEAD
-                    onClick={() =>
-                      (window.location.href = globalPath + blog.id)
-                    }
-=======
                     onClick={() =>(window.location.href = `/laravel-api/${blog.id}`)}
->>>>>>> 0a4ec2c531c2a2338a7c1e4531880df1d49aa56d
                     style={{ marginTop: "10px", marginBottom: "5px" }}
                   >
                     {blog.title}
