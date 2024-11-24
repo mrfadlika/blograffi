@@ -3,6 +3,7 @@ import "./BlogKedua.styles.css";
 import CodeEditor from "../../Context/CodeEditor";
 import { useState } from "preact/hooks";
 import { blogSeries, globalPath } from "./BlogKedua.hooks";
+import Footer from "../../Context/Footer";
 
 const BlogKeduaPart2 = () => {
   const currentPath = window.location.pathname;
@@ -342,13 +343,9 @@ class Post extends Model
                         ? "selected"
                         : "unselected"
                     }`}
-<<<<<<< HEAD
                     onClick={() =>
                       (window.location.href = globalPath + blog.id)
                     }
-=======
-                    onClick={() =>(window.location.href = `/laravel-api/${blog.id}`)}
->>>>>>> 0a4ec2c531c2a2338a7c1e4531880df1d49aa56d
                     style={{ marginTop: "10px", marginBottom: "5px" }}
                   >
                     {blog.title}
@@ -389,28 +386,7 @@ class Post extends Model
         </div>
       </div>
 
-      <div className="blog-page footer">
-        <img
-          src="https://avatars.githubusercontent.com/u/101388811?v=4"
-          alt="Raffi Fadlika"
-          className="rounded-circle"
-          style={{ width: "100px", height: "100px", marginBottom: "0px" }}
-        />
-        <div className="blog-page tulisan">
-          <h2>Raffi Fadlika</h2>
-          <p>Fullstack Developer</p>
-        </div>
-        <div className="blog-page sebelah-kanan">
-          <p>
-            Suka dengan tulisan saya? Kamu bisa memberikan dukungan dengan
-            berdonasi atau bagikan konten ini di sosial media. Terima kasih atas
-            dukungannya!
-          </p>
-          <a className="btn btn-primary" href="https://saweria.co/raffifadlika">
-            Donasi Saweria
-          </a>
-        </div>
-      </div>
+      <Footer />
     </div>
   );
 };
