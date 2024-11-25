@@ -138,7 +138,7 @@ const BlogPertamaPart3 = () => {
 
   return (
     <div className="blog-page container">
-      <div className="blog-page header align-items-center">
+      <div className="blog-page header align-items-center border-0 shadow">
         <h2 className="text-black">
           Tutorial Coding OOP di Java #3: Modifier dan Packages
         </h2>
@@ -146,7 +146,7 @@ const BlogPertamaPart3 = () => {
 
       <div className="blog-page row">
         <div className="blog-page leftcolumn">
-          <div className="blog-page card">
+          <div className="blog-page card border-0 shadow">
             <img
               src="/banner1.png"
               alt="OOP"
@@ -606,7 +606,7 @@ class MyClass {
             </p>
           </div> */}
           <div className="sticky-container">
-            <div className="blog-page card">
+            <div className="blog-page card border-0 shadow">
               <h3>Daftar Seri Blog</h3>
               <hr />
               {blogSeries.map((blog, index) => (
@@ -622,7 +622,7 @@ class MyClass {
                 </div>
               ))}
             </div>
-            <div className="blog-page card">
+            <div className="blog-page card border-0 shadow">
               <h3>Follow Me</h3>
               <p>
                 <a

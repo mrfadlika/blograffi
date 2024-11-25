@@ -67,7 +67,7 @@ int main() {
 
   return (
     <div className="blog-page container">
-      <div className="blog-page header align-items-center">
+      <div className="blog-page header align-items-center border-0 shadow">
         <h2 className="text-black">
           Tutorial Coding OOP di Java #1: Apa itu OOP?
         </h2>
@@ -75,7 +75,7 @@ int main() {
 
       <div className="blog-page row">
         <div className="blog-page leftcolumn">
-          <div className="blog-page card">
+          <div className="blog-page card border-0 shadow">
             <img
               src="/banner1.png"
               alt="OOP"
@@ -357,7 +357,7 @@ public class Main {
             </p>
           </div> */}
           <div className="sticky-container">
-            <div className="blog-page card">
+            <div className="blog-page card border-0 shadow">
               <h3>Daftar Seri Blog</h3>
               <hr />
               {blogSeries.map((blog, index) => (
@@ -373,7 +373,7 @@ public class Main {
                 </div>
               ))}
             </div>
-            <div className="blog-page card">
+            <div className="blog-page card border-0 shadow">
               <h3>Follow Me</h3>
               <p>
                 <a

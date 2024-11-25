@@ -30,7 +30,7 @@ const BlogKeduaPart1 = () => {
 
   return (
     <div className="blog-page container">
-      <div className="blog-page header align-items-center">
+      <div className="blog-page header align-items-center border-0 shadow">
         <h2 className="text-black">
           Tutorial Laravel API #1: Install dan Menjalankan Laravel 11
         </h2>
@@ -38,11 +38,17 @@ const BlogKeduaPart1 = () => {
 
       <div className="blog-page row">
         <div className="blog-page leftcolumn">
-          <div className="blog-page card">
+          <div className="blog-page card border-0 shadow">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSvD-_e6KULLAtEtg16vKPZJmATkdXiZi09Q&s"
+              src="/banner2.png"
               alt="Laravel 11 API"
-              style={{ height: "200px", marginBottom: "30px" }}
+              style={{
+                height: "200px",
+                marginBottom: "30px",
+                width: "100%",
+                objectPosition: "center",
+                borderRadius: "10px",
+              }}
             />
             <ul class="breadcrumb">
               <li>
@@ -195,7 +201,7 @@ DB_PASSWORD=`}
             </p>
           </div> */}
           <div className="sticky-container">
-            <div className="blog-page card">
+            <div className="blog-page card border-0 shadow">
               <h3>Daftar Seri Blog</h3>
               <hr />
               <div className="series-item">
@@ -217,7 +223,7 @@ DB_PASSWORD=`}
                 ))}
               </div>
             </div>
-            <div className="blog-page card">
+            <div className="blog-page card border-0 shadow">
               <h3>Follow Me</h3>
               <p>
                 <a

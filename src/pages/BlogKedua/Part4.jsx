@@ -30,7 +30,7 @@ const BlogKeduaPart4 = () => {
 
   return (
     <div className="blog-page container">
-      <div className="blog-page header align-items-center">
+      <div className="blog-page header align-items-center border-0 shadow">
         <h2 className="text-black">
           Tutorial Laravel API #4: Menampilkan Data dari Database dengan Metode
           GET
@@ -39,9 +39,9 @@ const BlogKeduaPart4 = () => {
 
       <div className="blog-page row">
         <div className="blog-page leftcolumn">
-          <div className="blog-page card">
+          <div className="blog-page card border-0 shadow">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSvD-_e6KULLAtEtg16vKPZJmATkdXiZi09Q&s"
+              src="/banner2.png"
               alt="Laravel 11 API"
               style={{ height: "200px", marginBottom: "30px" }}
             />
@@ -280,7 +280,7 @@ Route::apiResource('/posts', App\Http\Controllers\Api\PostController::class);`}
             </p>
           </div> */}
           <div className="sticky-container">
-            <div className="blog-page card">
+            <div className="blog-page card border-0 shadow">
               <h3>Daftar Seri Blog</h3>
               <hr />
               <div className="series-item">
@@ -302,7 +302,7 @@ Route::apiResource('/posts', App\Http\Controllers\Api\PostController::class);`}
                 ))}
               </div>
             </div>
-            <div className="blog-page card">
+            <div className="blog-page card border-0 shadow">
               <h3>Follow Me</h3>
               <p>
                 <a

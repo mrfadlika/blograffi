@@ -24,7 +24,7 @@ const BlogKedua = () => {
         conclusion:
           "Dengan seri blog ini diharapkan teman teman dapat mengimplementasikan pendistribusian dan pembuatan API Resources pada Laravel 11",
       }}
-      image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSvD-_e6KULLAtEtg16vKPZJmATkdXiZi09Q&s"
+      image="flyer-2.png"
     />
   );
 };

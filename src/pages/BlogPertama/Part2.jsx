@@ -26,17 +26,7 @@ const BlogPertamaPart2 = () => {
       lineNumbers: true,
       mode: "text/x-java",
       theme: "monokai",
-      value: `public class Solution {
-  public static void main(String[] args) {
-    // Tulis kode Java di sini
-    System.out.println(solution());
-  }
-
-  public static String solution() {
-    // Kode kamu
-    return "";
-  }
-}`,
+      value: `// Tuliskan kode Anda di sini`,
     });
     setEditor(editorInstance);
   }, []);
@@ -136,7 +126,7 @@ const BlogPertamaPart2 = () => {
 
   return (
     <div className="blog-page container">
-      <div className="blog-page header text-black">
+      <div className="blog-page header text-black border-0 shadow">
         <h2>
           Tutorial Coding OOP di Java #2: Mengenal Atribut, Method dan
           Constructor
@@ -145,7 +135,7 @@ const BlogPertamaPart2 = () => {
 
       <div className="blog-page row">
         <div className="blog-page leftcolumn">
-          <div className="blog-page card">
+          <div className="blog-page card border-0 shadow">
             <img
               src="/banner1.png"
               alt="OOP"
@@ -710,7 +700,7 @@ public class Main {
             </p>
           </div> */}
           <div className="sticky-container">
-            <div className="blog-page card">
+            <div className="blog-page card border-0 shadow">
               <h3>Daftar Seri Blog</h3>
               <hr />
               {blogSeries.map((blog, index) => (
@@ -726,7 +716,7 @@ public class Main {
                 </div>
               ))}
             </div>
-            <div className="blog-page card">
+            <div className="blog-page card border-0 shadow">
               <h3>Follow Me</h3>
               <p>
                 <a
