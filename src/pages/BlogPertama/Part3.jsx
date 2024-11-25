@@ -148,9 +148,24 @@ const BlogPertamaPart3 = () => {
         <div className="blog-page leftcolumn">
           <div className="blog-page card">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSio4iHwto_mXFE3q2caH74o0QsKgsN79ehsw&s"
+              src="/banner1.png"
               alt="OOP"
-              style={{ height: "200px", marginBottom: "30px" }}
+              style={{
+                height: "200px",
+                width: "100%",
+                marginBottom: "30px",
+                objectFit: "cover",
+                objectPosition: "center",
+                borderRadius: "10px",
+              }}
+              onLoad={(e) =>
+                console.log(
+                  "Image dimensions:",
+                  e.target.width,
+                  "x",
+                  e.target.height
+                )
+              }
             />
             <ul class="breadcrumb">
               <li>

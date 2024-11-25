@@ -44,44 +44,45 @@ const BlogPertamaPart2 = () => {
   const handleUserSubmit = async () => {
     const userCode = editor.getValue();
     try {
-      const response = await fetch('/api/execute', {
-        method: 'POST',
+      const response = await fetch("/api/execute", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          clientId: '7a46b49a6ed3f63c58b608540ab1c97',
-          clientSecret: '62c88c62a2fde469695490506cf30f3961d1f57c3ac08004f39c6a69558ddb5',
+          clientId: "7a46b49a6ed3f63c58b608540ab1c97",
+          clientSecret:
+            "62c88c62a2fde469695490506cf30f3961d1f57c3ac08004f39c6a69558ddb5",
           script: userCode,
-          language: 'java',
-          versionIndex: '0'
-        })
+          language: "java",
+          versionIndex: "0",
+        }),
       });
-      
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      
+
       const data = await response.json();
       if (data.error) {
         throw new Error(data.error);
       }
-      
+
       const result = data.output.trim();
       setUserOutput(result);
-  
+
       if (result === challenge.output) {
-        setModalMessage('Selamat! Jawaban kamu benar! 🎉');
+        setModalMessage("Selamat! Jawaban kamu benar! 🎉");
         setAnswer("true");
       } else {
-        setModalMessage('Jawaban kamu belum tepat. Coba lagi! 💪');
+        setModalMessage("Jawaban kamu belum tepat. Coba lagi! 💪");
         setAnswer("false");
       }
       setIsModalOpen(true);
     } catch (error) {
-      console.error('Fetch error:', error);
-      setUserOutput('Error: ' + error.message);
-      setModalMessage('Ada kesalahan dalam menjalankan kode! 🐛');
+      console.error("Fetch error:", error);
+      setUserOutput("Error: " + error.message);
+      setModalMessage("Ada kesalahan dalam menjalankan kode! 🐛");
       setAnswer("false");
       setIsModalOpen(true);
     }
@@ -146,9 +147,24 @@ const BlogPertamaPart2 = () => {
         <div className="blog-page leftcolumn">
           <div className="blog-page card">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSio4iHwto_mXFE3q2caH74o0QsKgsN79ehsw&s"
+              src="/banner1.png"
               alt="OOP"
-              style={{ height: "200px", marginBottom: "30px" }}
+              style={{
+                height: "200px",
+                width: "100%",
+                marginBottom: "30px",
+                objectFit: "cover",
+                objectPosition: "center",
+                borderRadius: "10px",
+              }}
+              onLoad={(e) =>
+                console.log(
+                  "Image dimensions:",
+                  e.target.width,
+                  "x",
+                  e.target.height
+                )
+              }
             />
             <ul class="breadcrumb">
               <li>
