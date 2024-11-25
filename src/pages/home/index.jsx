@@ -16,7 +16,7 @@ const Home = () => {
         title: "Memahami OOP dalam Java",
         description: "Panduan lengkap tentang OOP dalam Pemrograman Java",
         image:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSio4iHwto_mXFE3q2caH74o0QsKgsN79ehsw&s",
+          "/banner1.png",
         author: "Raffi Fadlika",
         date: "9 Okt 2024",
         link: "/oopjava",
@@ -80,7 +80,7 @@ const Home = () => {
             {blogs.map((blog) => (
               <a href={blog.link} key={blog.id} className="linkhrefnya">
                 <article className="blog-card">
-                  <img src={blog.image} alt={blog.title} />
+                  <img src={blog.image} alt={blog.title} onLoad={(e) => console.log("Image dimensions:", e.target.width, "x", e.target.height)} />
                   <div className="blog-content">
                     <h3>{blog.title}</h3>
                     <p>{blog.description}</p>

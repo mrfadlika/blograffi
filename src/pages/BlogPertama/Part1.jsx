@@ -68,17 +68,35 @@ int main() {
   return (
     <div className="blog-page container">
       <div className="blog-page header align-items-center">
-        <h2 className="text-black">Tutorial Coding OOP di Java #1: Apa itu OOP?</h2>
+        <h2 className="text-black">
+          Tutorial Coding OOP di Java #1: Apa itu OOP?
+        </h2>
       </div>
 
       <div className="blog-page row">
         <div className="blog-page leftcolumn">
           <div className="blog-page card">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSio4iHwto_mXFE3q2caH74o0QsKgsN79ehsw&s"
+              src="/banner1.png"
               alt="OOP"
-              style={{ height: "200px", marginBottom: "30px" }}
+              style={{
+                height: "200px",
+                width: "100%",
+                marginBottom: "30px",
+                objectFit: "cover",
+                objectPosition: "center",
+                borderRadius: "10px",
+              }}
+              onLoad={(e) =>
+                console.log(
+                  "Image dimensions:",
+                  e.target.width,
+                  "x",
+                  e.target.height
+                )
+              }
             />
+
             <ul class="breadcrumb">
               <li>
                 <a href="/">Home</a>
@@ -316,7 +334,13 @@ public class Main {
                   </form>
                 </div>
               </div>
-              {isModalOpen && <Modal message={modalMessage} onClose={closeModal} answer={answer} />}
+              {isModalOpen && (
+                <Modal
+                  message={modalMessage}
+                  onClose={closeModal}
+                  answer={answer}
+                />
+              )}
             </div>
             <br />
             <br />
@@ -333,7 +357,7 @@ public class Main {
             </p>
           </div> */}
           <div className="sticky-container">
-          <div className="blog-page card">
+            <div className="blog-page card">
               <h3>Daftar Seri Blog</h3>
               <hr />
               {blogSeries.map((blog, index) => (

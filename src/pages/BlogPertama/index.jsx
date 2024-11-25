@@ -18,7 +18,7 @@ const BlogPertama = () => {
         conclusion:
           "Dengan seri blog ini diharapkan teman teman dapat mengimplementasikan apa itu object oriented programming pada bahasa Java",
       }}
-      image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSio4iHwto_mXFE3q2caH74o0QsKgsN79ehsw&s"
+      image="/flyer-1.png"
     />
   );
 };
