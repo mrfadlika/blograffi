@@ -126,7 +126,7 @@ const ListPage = ({
                     className="bg-light rounded-circle mx-auto d-flex align-items-center justify-content-center"
                     style={{ width: "120px", height: "120px" }}
                   >
-                    <i className="bi bi-person fs-1 text-secondary"></i>
+                    <img src="https://avatars.githubusercontent.com/u/101388811?v=4" alt="Raffi Fadlika" className="rounded-circle" style={{ width: "120px", height: "120px", marginBottom: "0px" }} />
                   </div>
                 </div>
                 <h5 className="card-title">Raffi Fadlika</h5>
