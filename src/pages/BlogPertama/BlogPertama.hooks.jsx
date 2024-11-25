@@ -4,8 +4,4 @@ const tutorData = [
   "Tutorial Coding OOP di Java #3: Modifier dan Packages",
 ];
 
-<<<<<<< HEAD
 export default tutorData;
-=======
-export default tutorData;
->>>>>>> 0a4ec2c531c2a2338a7c1e4531880df1d49aa56d

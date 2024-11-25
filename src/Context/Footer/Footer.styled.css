@@ -1,0 +1,23 @@
+.blog-page .footer {
+  padding: 40px;
+  background: #ddd;
+  margin-top: 20px;
+  border-radius: 10px 10px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.blog-page .tulisan {
+  margin: 20px 0px 0px 0px;
+  text-align: center;
+}
+
+.blog-page .tulisan h2 {
+  margin: 0;
+  text-align: center;
+}
+.blog-page .tulisan p {
+  margin: 0;
+}
