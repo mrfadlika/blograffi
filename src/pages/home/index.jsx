@@ -20,19 +20,18 @@ const Home = () => {
         author: "Raffi Fadlika",
         date: "9 Okt 2024",
         link: "/oopjava",
-        harga: "0",
+        cat: "gratis",
       },
       {
         id: 2,
         title: "Tutorial Restfull API Laravel 11",
         description:
           "Panduan lengkap tentang Laravel API menggunakan Laravel 11",
-        image:
-          "/banner2.png",
+        image: "/banner2.png",
         author: "Raffi Fadlika",
         date: "20 Okt 2024",
         link: "/laravel-api",
-        harga: "0",
+        cat: "premium",
       },
     ]);
 
@@ -106,12 +105,18 @@ const Home = () => {
                       </span>
                       <span
                         className={`badge ${
-                          blog.harga === "0" || blog.harga === "Gratis"
+                          blog.cat === "gratis" || blog.cat === "Gratis"
                             ? "text-bg-success"
-                            : "text-bg-warning"
+                            : blog.cat === "premium" || blog.cat === "Premium"
+                            ? "text-bg-warning"
+                            : "text-bg-danger"
                         }`}
                       >
-                        <PriceFormatter amount={blog.harga} />
+                        {blog.cat === "gratis" || blog.cat === "Gratis"
+                          ? "Gratis"
+                          : blog.cat === "premium" || blog.cat === "Premium"
+                          ? "Premium"
+                          : "Banned"}
                       </span>
                     </div>
                   </div>
@@ -121,7 +126,7 @@ const Home = () => {
           </div>
           <button className="load-more">Load more</button>
         </section>
-{/* 
+        {/* 
         <section className="category-navigation mb-4">
           <div className="container">
             <div className="row justify-content-center">

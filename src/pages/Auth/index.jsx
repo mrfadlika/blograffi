@@ -30,26 +30,28 @@ const LoginForm = ({ onLogin }) => {
   };
 
   return (
-    <div className="div-utama">
-      <h2>Login</h2>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      <form onSubmit={handleLogin}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onInput={(e) => setUsername(e.target.value)}
-          className="input-type"
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onInput={(e) => setPassword(e.target.value)}
-          className="input-type"
-        />
-        <button type="submit" className="button-login"></button>
-      </form>
+    <div className="paling-atas">
+      <div className="div-utama">
+        <h2>Login</h2>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        <form onSubmit={handleLogin}>
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onInput={(e) => setUsername(e.target.value)}
+            className="input-type"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onInput={(e) => setPassword(e.target.value)}
+            className="input-type"
+          />
+          <button type="submit" className="button-login">Login</button>
+        </form>
+      </div>
     </div>
   );
 };
