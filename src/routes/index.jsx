@@ -10,11 +10,11 @@ import BlogKeduaPart2 from "../pages/BlogKedua/Part2";
 import BlogKeduaPart3 from "../pages/BlogKedua/Part3";
 import BlogKeduaPart4 from "../pages/BlogKedua/Part4";
 import BlogPertama from "../pages/BlogPertama";
-import BlogKedua from "../pages/BlogKedua";
 import BlogKeduaPart5 from "../pages/BlogKedua/Part5";
 import BlogKeduaPart6 from "../pages/BlogKedua/Part6";
 import BlogKeduaPart7 from "../pages/BlogKedua/Part7";
 import BlogKeduaPart8 from "../pages/BlogKedua/Part8";
+import BlogKedua from "../pages/BlogKedua";
 
 function Routes() {
     return (
@@ -24,7 +24,7 @@ function Routes() {
             <BlogPertamaPart1 path="/oopjava/1" />
             <BlogPertamaPart2 path="/oopjava/2" />
             <BlogPertamaPart3 path="/oopjava/3" />
-            <BlogPage path="/test" />
+            {/* <LoginForm path="/test" /> */}
             <BlogKedua path="/laravel-api" />
             <BlogKeduaPart1 path="/laravel-api/1" />
             <BlogKeduaPart2 path="/laravel-api/2" />

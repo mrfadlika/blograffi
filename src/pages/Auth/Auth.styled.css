@@ -1,0 +1,17 @@
+.div-utama {
+    max-width: 300px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.input-type {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.button-login {
+    padding: 10px 20px;
+    cursor: pointer;
+}
