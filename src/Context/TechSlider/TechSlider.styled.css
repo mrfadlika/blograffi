@@ -1,6 +1,6 @@
 .tech-slider-wrapper {
     background-color: whitesmoke;
-    width: 100vw;
+    width: 1695px;
     margin-left: calc(-50vw + 50%);
     padding: 20px 0;
   }
@@ -89,6 +89,9 @@
   }
   
   @media (max-width: 768px) {
+    .tech-slider-wrapper {
+      width: auto;
+    }
     .tech-item {
       flex: 0 0 180px;
     }
@@ -109,6 +112,9 @@
   }
   
   @media (max-width: 480px) {
+    .tech-slider-wrapper{
+      width:fit-content;
+    }
     .tech-item {
       flex: 0 0 160px;
     }
