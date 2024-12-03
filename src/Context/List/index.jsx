@@ -55,7 +55,7 @@ const ListPage = ({
                     <a
                       className={`nav-link ${
                         activeTab === "tutorial" ? "active" : ""
-                      }`}
+                      } px-2`}
                       href="#"
                       onClick={(e) => handleTabChange("tutorial", e)}
                     >
@@ -67,7 +67,7 @@ const ListPage = ({
                     <a
                       className={`nav-link ${
                         activeTab === "description" ? "active" : ""
-                      }`}
+                      } px-2`}
                       href="#"
                       onClick={(e) => handleTabChange("description", e)}
                     >
