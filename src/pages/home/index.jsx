@@ -78,7 +78,6 @@ const Home = () => {
 
         <main>
           <TechSlider />
-
           <section className="recent-posts">
             <h2 className="mt-5">Recent blog posts</h2>
             <div className="blog-grid">
@@ -128,7 +127,6 @@ const Home = () => {
             </div>
             <button className="load-more">Load more</button>
           </section>
-
           <section className="py-5">
             <div className="container">
               <h2 className="text-center fw-bold mb-4">Tutorial Set</h2>
@@ -231,6 +229,120 @@ const Home = () => {
                       <button className="btn btn-primary btn-sm mb-3 p-2">
                         7 Tutorial
                       </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            className="py-5 text-center position-relative"
+            style={{
+              backgroundColor: "#1c1e24",
+              borderRadius: "30px",
+              margin: "40px 20px",
+              overflow: "hidden",
+            }}
+          >
+            {/* Ornamen Dekoratif */}
+            <div
+              className="position-absolute top-0 start-0"
+              style={{
+                width: "150px",
+                height: "150px",
+                background:
+                  "radial-gradient(circle, rgba(13,110,253,0.2) 0%, rgba(28,30,36,0) 70%)",
+                borderRadius: "50%",
+                transform: "translate(-50%, -50%)",
+              }}
+            />
+            <div
+              className="position-absolute bottom-0 end-0"
+              style={{
+                width: "200px",
+                height: "200px",
+                background:
+                  "radial-gradient(circle, rgba(13,110,253,0.15) 0%, rgba(28,30,36,0) 70%)",
+                borderRadius: "50%",
+                transform: "translate(30%, 30%)",
+              }}
+            />
+
+            <div className="container py-4">
+              <div className="row justify-content-center">
+                <div className="col-lg-8">
+                  <h2
+                    className="text-white fw-bold display-5 mb-4"
+                    style={{
+                      textShadow: "0 2px 4px rgba(0,0,0,0.2)",
+                    }}
+                  >
+                    CODE <span className="text-danger">ERROR</span> TERUS?
+                  </h2>
+
+                  <p className="text-white fs-5 my-4 opacity-90">
+                    Temukan solusi dari setiap error yang kamu hadapi dengan
+                    mudah dan cepat.
+                  </p>
+
+                  <div className="d-flex flex-column align-items-center">
+                    <a
+                      href="/stack-over"
+                      className="btn btn-light btn-lg px-5 py-3 rounded-pill fw-bold mb-4 shadow-sm hover-scale"
+                      style={{
+                        transition: "all 0.3s ease",
+                        transform: "scale(1)",
+                      }}
+                      onMouseOver={(e) =>
+                        (e.currentTarget.style.transform = "scale(1.05)")
+                      }
+                      onMouseOut={(e) =>
+                        (e.currentTarget.style.transform = "scale(1)")
+                      }
+                    >
+                      <i className="bi bi-code-slash me-2"></i>
+                      Solusi Error
+                    </a>
+
+                    <div className="d-flex align-items-center justify-content-center flex-wrap gap-3">
+                      <div className="d-flex" style={{ marginRight: "15px" }}>
+                        {[1, 2, 3, 4, 5].map((i) => (
+                          <div
+                            key={i}
+                            className="position-relative"
+                            style={{
+                              marginLeft: i > 1 ? "-10px" : 0,
+                              zIndex: 6 - i,
+                              transition: "transform 0.3s ease",
+                            }}
+                            onMouseOver={(e) =>
+                              (e.currentTarget.style.transform =
+                                "translateY(-5px)")
+                            }
+                            onMouseOut={(e) =>
+                              (e.currentTarget.style.transform =
+                                "translateY(0)")
+                            }
+                          >
+                            <img
+                              src={`https://placehold.co/45x45/1c1e24/ffffff/png?text=${i}`}
+                              alt={`Member ${i}`}
+                              className="rounded-circle border border-2 border-white shadow-sm"
+                              style={{
+                                width: "45px",
+                                height: "45px",
+                                objectFit: "cover",
+                              }}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                      <div className="d-flex">
+                        <p className="text-white mb-0">
+                          Lebih dari <span className="fw-bold">47</span> Orang
+                          Kesulitan menemukan Error codenya
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>

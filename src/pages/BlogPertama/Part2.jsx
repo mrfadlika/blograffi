@@ -33,34 +33,39 @@ const BlogPertamaPart2 = () => {
 
   const handleUserSubmit = async () => {
     const userCode = editor.getValue();
+  
+    const payload = {
+      clientId: "7a46b49a6ed3f63c58b608540ab1c97",
+      clientSecret:
+        "4dc12cc22053d6240d0814f81409c435a43c1dd77e2f91ad56ec2a8542ce1c2d",
+      script: userCode,
+      language: "java",
+      versionIndex: "0",
+    };
+  
+    console.log("Payload being sent:", payload);
+  
     try {
       const response = await fetch("/api/execute", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          clientId: "7a46b49a6ed3f63c58b608540ab1c97",
-          clientSecret:
-            "62c88c62a2fde469695490506cf30f3961d1f57c3ac08004f39c6a69558ddb5",
-          script: userCode,
-          language: "java",
-          versionIndex: "0",
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
-
+  
+      console.log("API Response Status:", response.status);
+  
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        const errorText = await response.text();
+        console.error("Error from API:", errorText);
+        throw new Error(errorText);
       }
-
+  
       const data = await response.json();
-      if (data.error) {
-        throw new Error(data.error);
-      }
-
+      console.log("Response Data:", data);
+  
       const result = data.output.trim();
-      setUserOutput(result);
-
+      setUserOutput(result); 
+  
       if (result === challenge.output) {
         setModalMessage("Selamat! Jawaban kamu benar! 🎉");
         setAnswer("true");
@@ -68,15 +73,18 @@ const BlogPertamaPart2 = () => {
         setModalMessage("Jawaban kamu belum tepat. Coba lagi! 💪");
         setAnswer("false");
       }
+      
       setIsModalOpen(true);
+  
     } catch (error) {
       console.error("Fetch error:", error);
-      setUserOutput("Error: " + error.message);
+      setUserOutput("Error: " + error.message);  
       setModalMessage("Ada kesalahan dalam menjalankan kode! 🐛");
       setAnswer("false");
-      setIsModalOpen(true);
+      setIsModalOpen(true);  
     }
   };
+  
 
   const blogSeries = [
     {
@@ -420,7 +428,7 @@ const BlogPertamaPart2 = () => {
                 marginBottom: "-10px",
               }}
             >
-              <h4>Method</h4>
+              <strong>Method</strong>
             </p>
             <p>
               Di Java, Method dideklarasikan di dalam class, dan dapat diakses
@@ -569,20 +577,20 @@ public class Main {
               Perhatikan bahwa kita menambahkan parameter tipe data{" "}
               <code>int</code> dengan nilai <strong>200</strong> di dalam method{" "}
               <code>speed()</code>.
-              <div className="container-pengingat">
-                <h4>Perhatikan!</h4>
-                <p>
-                  Titik (.) digunakan untuk mengakses atribut objek dan method{" "}
-                  <br />
-                  Untuk memanggil method di Java, tulisan nama method diikuti
-                  dengan tanda kurung () dan semicolon (;) <br />
-                  Sebuah class harus sama dengan nama file (<code>
-                    Main
-                  </code>{" "}
-                  dan <strong>Main.java</strong>)
-                </p>
-              </div>
             </p>
+            <div className="container-pengingat">
+              <h4>Perhatikan!</h4>
+              <p>
+                Titik (.) digunakan untuk mengakses atribut objek dan method{" "}
+                <br />
+                Untuk memanggil method di Java, tulisan nama method diikuti
+                dengan tanda kurung () dan semicolon (;) <br />
+                Sebuah class harus sama dengan nama file (<code>
+                  Main
+                </code> dan <strong>Main.java</strong>)
+              </p>
+            </div>
+
             <h4>Constructor</h4>
             <p>
               Constructor adalah sebuah method yang dipanggil saat object

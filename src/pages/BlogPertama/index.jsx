@@ -22,7 +22,6 @@ const BlogPertama = () => {
         }}
         image="/flyer-1.png"
       />
-      <FooterMain style={{ position: 'absolute', bottom: '0', left: '0', width: '100%' }} />
     </div>
   );
 };

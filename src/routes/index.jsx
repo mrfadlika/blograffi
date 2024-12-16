@@ -15,6 +15,8 @@ import BlogKeduaPart6 from "../pages/BlogKedua/Part6";
 import BlogKeduaPart7 from "../pages/BlogKedua/Part7";
 import BlogKeduaPart8 from "../pages/BlogKedua/Part8";
 import BlogKedua from "../pages/BlogKedua";
+import StackOver from "../pages/StackOver";
+import StackPertama from "../pages/StackOver/StackPertama/StackPertama";
 
 function Routes() {
     return (
@@ -36,6 +38,8 @@ function Routes() {
             <BlogKeduaPart8 path="/laravel-api/8" />
             <ComingSoon path="/coming-soon" />
             <ComingSoon path="*" />
+            <StackOver path="/stack-over" />
+            <StackPertama path="/stack-over/1" />
         </Router>
     )
 }

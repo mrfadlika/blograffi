@@ -34,34 +34,39 @@ const BlogPertamaPart3 = () => {
 
   const handleUserSubmit = async () => {
     const userCode = editor.getValue();
+  
+    const payload = {
+      clientId: "7a46b49a6ed3f63c58b608540ab1c97",
+      clientSecret:
+        "4dc12cc22053d6240d0814f81409c435a43c1dd77e2f91ad56ec2a8542ce1c2d",
+      script: userCode,
+      language: "java",
+      versionIndex: "0",
+    };
+  
+    console.log("Payload being sent:", payload);
+  
     try {
       const response = await fetch("/api/execute", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          clientId: "7a46b49a6ed3f63c58b608540ab1c97",
-          clientSecret:
-            "62c88c62a2fde469695490506cf30f3961d1f57c3ac08004f39c6a69558ddb5",
-          script: userCode,
-          language: "java",
-          versionIndex: "0",
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
-
+  
+      console.log("API Response Status:", response.status);
+  
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        const errorText = await response.text();
+        console.error("Error from API:", errorText);
+        throw new Error(errorText);
       }
-
+  
       const data = await response.json();
-      if (data.error) {
-        throw new Error(data.error);
-      }
-
+      console.log("Response Data:", data);
+  
       const result = data.output.trim();
-      setUserOutput(result);
-
+      setUserOutput(result); 
+  
       if (result === challenge.output) {
         setModalMessage("Selamat! Jawaban kamu benar! 🎉");
         setAnswer("true");
@@ -69,13 +74,15 @@ const BlogPertamaPart3 = () => {
         setModalMessage("Jawaban kamu belum tepat. Coba lagi! 💪");
         setAnswer("false");
       }
+      
       setIsModalOpen(true);
+  
     } catch (error) {
       console.error("Fetch error:", error);
-      setUserOutput("Error: " + error.message);
+      setUserOutput("Error: " + error.message);  
       setModalMessage("Ada kesalahan dalam menjalankan kode! 🐛");
       setAnswer("false");
-      setIsModalOpen(true);
+      setIsModalOpen(true);  
     }
   };
 

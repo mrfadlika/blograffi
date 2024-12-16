@@ -34,6 +34,7 @@ const BlogKedua = () => {
   return (
     <div>
       {isLoggedIn ? (
+        <div>
         <ListPage
           tutorials={title}
           title="Tutorial Laravel API"
@@ -56,6 +57,7 @@ const BlogKedua = () => {
           }}
           image="flyer-2.png"
         />
+        </div>
       ) : (
         <LoginForm onLogin={handleLogin} />
       )}
